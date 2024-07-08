@@ -1,0 +1,29 @@
+[gd_scene load_steps=8 format=3 uid="uid://c61vnofwyrok8"]
+
+[ext_resource type="PackedScene" uid="uid://utgqpprrbjtx" path="res://Tests/Root.tscn" id="1_ait4t"]
+[ext_resource type="Script" path="res://Tests/ShapeTest/ShapeTest.cs" id="2_hwemq"]
+[ext_resource type="PackedScene" uid="uid://bbbju8bkh3ltw" path="res://Tests/ShapeTest/Shapes.tscn" id="2_xkqpi"]
+[ext_resource type="Script" path="res://addons/F00F.Core/Common/3D/Camera/CameraConfig.cs" id="3_jk3xf"]
+[ext_resource type="Script" path="res://addons/F00F.Core/Common/3D/Camera/CameraInput.cs" id="4_fcf47"]
+
+[sub_resource type="Resource" id="Resource_6k4dd"]
+script = ExtResource("3_jk3xf")
+Speed = 5.0
+Sensitivity = 0.001
+PitchLimit = 1.309
+Anchor = Vector3(0, 0, 0)
+Offset = Vector3(0, 3, 5)
+Look = Vector3(0, 0, -5)
+
+[sub_resource type="Resource" id="Resource_xgj4h"]
+script = ExtResource("4_fcf47")
+
+[node name="Root" instance=ExtResource("1_ait4t")]
+script = ExtResource("2_hwemq")
+
+[node name="Camera" parent="." index="1"]
+Config = SubResource("Resource_6k4dd")
+Input = SubResource("Resource_xgj4h")
+
+[node name="Shapes" parent="." index="4" instance=ExtResource("2_xkqpi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)

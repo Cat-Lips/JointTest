@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://utgqpprrbjtx"]
+
+[ext_resource type="PackedScene" uid="uid://bds7513d0ag58" path="res://addons/F00F.Core/Game3D.tscn" id="1_tt3mq"]
+[ext_resource type="Script" path="res://Tests/Root.cs" id="2_eci7s"]
+[ext_resource type="PackedScene" uid="uid://um4ei8y867kh" path="res://Tests/Floor.tscn" id="5_kpw4c"]
+
+[node name="Root" instance=ExtResource("1_tt3mq")]
+script = ExtResource("2_eci7s")
+
+[node name="Camera" parent="." index="1"]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 4, 2, 3)
+
+[node name="Floor" parent="." index="3" instance=ExtResource("5_kpw4c")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
